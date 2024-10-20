@@ -1,0 +1,10 @@
+{
+    "random_seed": 42,
+    "testing_hdf_file_name": "./data/test.hdf",
+    "model_path": "models/model_for_ggwd.keras",
+    "output_name": "model",
+    "batch_size": 32,
+    "learning_rate": 1e-4,
+    "loss": "mean_squared_error",
+    "accuracy_metrics": ["mean_squared_error"]
+}
