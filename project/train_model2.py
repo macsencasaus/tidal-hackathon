@@ -11,7 +11,6 @@ import time
 
 import numpy as np
 import tensorflow as tf
-from keras.api.optimizers import Adam
 
 from config_files import read_json_config
 from data_processing import apply_sfft, get_normalized_data, get_time_info
@@ -74,14 +73,8 @@ if __name__ == "__main__":
     # -------------------------------------------------------------------------
 
     hdf_file_name = config["training_hdf_file_path"]
-    X_train, y_train = get_normalized_data(hdf_file_name)
 
-    print("")
-    print("Applying Short Form Fourier Transform...", end=" ", flush=True)
-    X_train = apply_sfft(X_train)
-    y_train = apply_sfft(y_train)
-    print("Done!")
-    print("")
+    X_train, y_train = np.load("data/processed_data/sfft.npy")
 
     # -------------------------------------------------------------------------
     # ACQUIRING, COMPILING, AND TRAINING THE MODEL

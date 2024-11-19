@@ -336,6 +336,6 @@ def apply_sfft(signals: np.ndarray, nperseg=128, nfft=512, fs=2048) -> np.ndarra
                 nperseg=nperseg,
                 nfft=nfft,
             )
-            output[i, :, :, ch] = Zxx[:256, :256]
+            output[i, :, :, ch] = np.log1p(np.abs(Zxx[:256, :256]))
 
     return output
